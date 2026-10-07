@@ -1,0 +1,58 @@
+/* css/form.css */
+#register-form {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+#register-form label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+#register-form input {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+#register-form input:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+#submit-btn {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: background var(--transition-fast), opacity var(--transition-fast);
+}
+
+#submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+#submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#form-status {
+  margin-top: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  min-height: 1.25rem;
+}
+
+#form-status[data-state="SUCCESS"] {
+  color: var(--color-success);
+}
+
+#form-status[data-state="ERROR"] {
+  color: var(--color-error);
+}

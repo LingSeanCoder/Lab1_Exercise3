@@ -1,0 +1,27 @@
+/* css/layout.css */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+}
+
+main {
+  padding: var(--space-6) var(--space-4);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+section + section {
+  margin-top: var(--space-7);
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}

@@ -21,7 +21,8 @@ XSS-safe double-submit prevention.
 ---
 
 ## Project Structure
-'''
+
+```text
 hw3-resilient-hub/
 ├── index.html
 ├── README.md
@@ -37,7 +38,7 @@ hw3-resilient-hub/
 └── js/
 ├── countdown.js
 └── form-state.js
-'''
+```
 
 
 ---

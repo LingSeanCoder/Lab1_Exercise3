@@ -47,12 +47,10 @@
         await new Promise((r) => setTimeout(r, 800)); // mock network
 
         transition(STATES.SUCCESS);
-        status.textContent = 'Registered. Check your email.';
         form.reset();
         setTimeout(() => transition(STATES.IDLE), 1500);
       } catch {
         transition(STATES.ERROR);
-        status.textContent = 'Something went wrong. Please try again.';
         setTimeout(() => transition(STATES.IDLE), 2500);
       }
     });
@@ -60,6 +58,11 @@
     subscribe((state) => {
       submitBtn.disabled = state === STATES.SUBMITTING;
       submitBtn.setAttribute('aria-busy', String(state === STATES.SUBMITTING));
+
+      status.setAttribute('data-state', state);
+      status.textContent = state === STATES.SUCCESS ? 'Registered. Check your email.'
+                          : state === STATES.ERROR   ? 'Something went wrong. Please try again.'
+                          : '';
     });
   }
 })();
